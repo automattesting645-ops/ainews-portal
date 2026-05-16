@@ -1,0 +1,179 @@
+{
+  "name": "AI News - Tägliche Content Pipeline",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": 1
+        }
+      },
+      "id": "schedule-trigger",
+      "name": "Daily 13:00 Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.1,
+      "position": [250, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://newsapi.org/v2/everything?q=artificial+intelligence&sortBy=publishedAt&language=de&pageSize=5",
+        "options": {}
+      },
+      "id": "fetch-news",
+      "name": "KI News abrufen",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "url": "https://hn.algolia.com/api/v1/search?query=AI&tags=story&hitsPerPage=5"
+      },
+      "id": "fetch-hackernews",
+      "name": "HackerNews AI Stories",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [450, 500]
+    },
+    {
+      "parameters": {
+        "url": "https://www.reddit.com/r/artificial/hot.json?limit=5"
+      },
+      "id": "fetch-reddit",
+      "name": "Reddit r/artificial Hot",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [450, 700]
+    },
+    {
+      "parameters": {
+        "jsCode": "// News API Results\nconst newsItems = $input.first().json.articles || [];\n\n// HackerNews Results\nconst hnItems = $input.item.json.hits || [];\n\n// Reddit Results\nconst redditItems = $input.item.json.data?.children?.map(c => c.data) || [];\n\n// Merge and deduplicate\nconst allItems = [...newsItems, ...hnItems, ...redditItems].slice(0, 10);\n\nreturn allItems.map(item => ({\n  json: {\n    title: item.title || item.story_title || '',\n    url: item.url || item.story_url || ('https://news.ycombinator.com/item?id=' + item.objectID),\n    source: item.source?.name || item._highlightResult?.author?.value || 'Reddit',\n    points: item.points || 0,\n    createdAt: item.createdAt || item.publishedAt || new Date().toISOString()\n  }\n}));"
+      },
+      "id": "merge-sources",
+      "name": "Quellen zusammenführen",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Bewertung: 1-10 basierend auf Engagement\nreturn $input.all().map(item => {\n  const data = item.json;\n  const points = data.points || 0;\n  let score = 5;\n  if (points > 100) score = 9;\n  else if (points > 50) score = 8;\n  else if (points > 10) score = 6;\n  \n  return {\n    json: { ...data, relevanceScore: score }\n  };\n});"
+      },
+      "id": "score-content",
+      "name": "Content bewerten",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 300]
+    },
+    {
+      "parameters": {
+        "functionCode": "// Top 3 items with best scores auswählen\nitems.sort((a, b) => b.json.relevanceScore - a.json.relevanceScore);\nreturn items.slice(0, 3);"
+      },
+      "id": "select-top",
+      "name": "Top 3 auswählen",
+      "type": "n8n-nodes-base.n8nFilter",
+      "typeVersion": 1,
+      "position": [1050, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Strukturierte JSON für Blog-Post generieren\nconst item = $input.first().json;\n\nreturn {\n  json: {\n    title: item.title,\n    slug: item.title\n      .toLowerCase()\n      .replace(/[^a-z0-9]+/g, '-')\n      .replace(/(^-|-$)/g, '')\n      .substring(0, 80),\n    excerpt: item.excerpt || `Entdecke: ${item.title} - Eine der wichtigsten KI-Nachrichten heute.`,\n    content: `<h2>${item.title}</h2><p>${item.excerpt || 'Hier erfährst du mehr über die neueste KI-Entwicklung.'}</p>`,\n    category: 'news',\n    tags: ['KI', 'News', 'AI', item.source],\n    source: item.source,\n    sourceUrl: item.url,\n    publishedAt: new Date().toISOString()\n  }\n};"
+      },
+      "id": "generate-blog-post",
+      "name": "Blog-Post generieren",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "// YouTube-Video-Skript aus dem Blog-Post generieren\nconst post = $input.first().json;\n\nconst videoScript = `\nTITEL: ${post.title}\n\nINTRO (0-15 Sek):\n\"Hey Leute! Heute geht's um ${post.title}. Let's dive in!\"\n\nHAUPTTEIL (8-15 Min):\n1. ${post.excerpt}\n2. Warum das wichtig ist\n3. Was die Konkurrenz macht\n4. Fazit & Handlungsempfehlung\n\nOUTRO:\n\"Abonniere für tägliche KI-News! Link in der Beschreibung.\"\n`;\n\nconst shortsScript = `\n${post.title} in 60 Sekunden! #AINews #KITools #Tech\n`;\n\nreturn {\n  json: {\n    ...post,\n    videoScript,\n    shortsScript,\n    videoTags: ['#KI', '#AI', '#TechNews', '#KuenstlicheIntelligenz']\n  }\n};"
+      },
+      "id": "generate-video-scripts",
+      "name": "Video-Skripte generieren",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1450, 300]
+    },
+    {
+      "parameters": {
+        "webhookUrls": "https://n8n.example.com/webhook/ainews-blog",
+        "method": "POST",
+        "sendBody": true,
+        "options": {}
+      },
+      "id": "webhook-blog",
+      "name": "An Blog senden (Webhook)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [1650, 200]
+    },
+    {
+      "parameters": {
+        "content": {
+          "text": "=Neuer Blog-Post: {{$json.title}}\n\n{{$json.excerpt}}\n\nLese mehr: https://ainews.example.com/post/{{$json.slug}}\n\n#KI #ArtificialIntelligence #TechNews"
+        }
+      },
+      "id": "tweet-content",
+      "name": "Twitter/X Post",
+      "type": "n8n-nodes-base.twitter",
+      "typeVersion": 1,
+      "position": [1650, 400]
+    },
+    {
+      "parameters": {
+        "content": "🎯 Neue KI-News!\n\n{{$json.title}}\n\n#AINews #KITools",
+        "videoUrl": ""
+      },
+      "id": "instagram-post",
+      "name": "Instagram Post",
+      "type": "n8n-nodes-base.instagram",
+      "typeVersion": 1,
+      "position": [1650, 550]
+    },
+    {
+      "parameters": {
+        "content": "{{$json.title}}\n\n{{$json.excerpt}}",
+        "mediaUrl": ""
+      },
+      "id": "linkedin-post",
+      "name": "LinkedIn Post",
+      "type": "n8n-nodes-base.linkedIn",
+      "typeVersion": 1,
+      "position": [1650, 700]
+    }
+  ],
+  "connections": {
+    "schedule-trigger": {
+      "main": [[{ "node": "fetch-news", "type": "main", "index": 0 }]]
+    },
+    "fetch-news": {
+      "main": [[{ "node": "merge-sources", "type": "main", "index": 0 }]]
+    },
+    "fetch-hackernews": {
+      "main": [[{ "node": "merge-sources", "type": "main", "index": 1 }]]
+    },
+    "fetch-reddit": {
+      "main": [[{ "node": "merge-sources", "type": "main", "index": 2 }]]
+    },
+    "merge-sources": {
+      "main": [[{ "node": "score-content", "type": "main", "index": 0 }]]
+    },
+    "score-content": {
+      "main": [[{ "node": "select-top", "type": "main", "index": 0 }]]
+    },
+    "select-top": {
+      "main": [[{ "node": "generate-blog-post", "type": "main", "index": 0 }]]
+    },
+    "generate-blog-post": {
+      "main": [[{ "node": "generate-video-scripts", "type": "main", "index": 0 }]]
+    },
+    "generate-video-scripts": {
+      "main": [[
+        { "node": "webhook-blog", "type": "main", "index": 0 },
+        { "node": "tweet-content", "type": "main", "index": 1 },
+        { "node": "instagram-post", "type": "main", "index": 2 },
+        { "node": "linkedin-post", "type": "main", "index": 3 }
+      ]]
+    }
+  }
+}
