@@ -26,19 +26,19 @@ export default function Home() {
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-success"></span>
               </span>
               <span className="text-sm text-muted-foreground">
-                Von <strong className="text-foreground">AI-n_sights</strong> — 50+ YouTube Videos
+                By <strong className="text-foreground">AI-n_sights</strong> — 50+ YouTube Videos
               </span>
             </div>
 
             {/* Main Headline – question-based für GEO */}
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Welche KI-Tools <span className="gradient-text">lohnen sich wirklich?</span>
+              Which AI tools <span className="gradient-text">are really worth it?</span>
             </h1>
 
             <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-3xl mx-auto">
-              Ich teste jede Woche die neuesten <strong>Open-Source-KI-Tools</strong> – von AnythingLLM bis Space Agent. 
-              <strong> Keine Cloud, kein Hype, nur Ergebnisse.</strong> Die besten Tools, Schritt-für-Schritt-Guides 
-              und alles was du brauchst, um lokal und kostenlos durchzustarten.
+              I test the newest <strong>open-source AI tools</strong> every week – from AnythingLLM to Space Agent. 
+              <strong> No cloud, no hype, just results.</strong> The best tools, step-by-step guides, 
+              and everything you need to get started locally and for free.
             </p>
 
             {/* Primary CTAs – Commitment & Consistency (erst kostenlos, dann Kurs) */}
@@ -48,7 +48,7 @@ export default function Home() {
                 className="btn-primary px-8 py-4 rounded-xl text-lg font-semibold text-white flex items-center gap-2 glow-hover group"
               >
                 <Zap className="w-5 h-5" />
-                Kostenlos starten
+                Start Free
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
@@ -57,7 +57,7 @@ export default function Home() {
                 className="px-8 py-4 rounded-xl text-lg font-medium border border-border bg-card hover:bg-card/80 transition-all flex items-center gap-2 group"
               >
                 <Play className="w-5 h-5 text-red-500" />
-                YouTube abonnieren
+                Subscribe on YouTube
                 <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:translate-x-0.5 transition-transform" />
               </a>
             </div>
@@ -73,19 +73,19 @@ export default function Home() {
                   ))}
                 </div>
                 <span className="text-muted-foreground">
-                  <strong className="text-foreground">24+ Tools</strong> getestet
+                  <strong className="text-foreground">24+ Tools</strong> tested
                 </span>
               </div>
               <span className="flex items-center gap-2">
                 <TrendingUp className="w-4 h-4 text-success" />
                 <span className="text-muted-foreground">
-                  <strong className="text-foreground">+234%</strong> Wachstum
+                  <strong className="text-foreground">+234%</strong> Growth
                 </span>
               </span>
               <span className="flex items-center gap-2">
                 <Users className="w-4 h-4 text-primary" />
                 <span className="text-muted-foreground">
-                  Newsletter: <strong className="text-foreground">kostenlos</strong>
+                  Newsletter: <strong className="text-foreground">Free</strong>
                 </span>
               </span>
             </div>
@@ -100,15 +100,15 @@ export default function Home() {
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-2">
                 <Sparkles className="w-6 h-6 inline text-primary mr-2" />
-                <span className="gradient-text">Aktuell</span> im Test
+                <span className="gradient-text">Currently</span> Testing
               </h2>
-              <p className="text-muted-foreground">Das wichtigste zuerst</p>
+              <p className="text-muted-foreground">The most important first</p>
             </div>
             <Link
               href="/news"
               className="hidden sm:flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors font-medium"
             >
-              Alle News <ChevronRight className="w-4 h-4" />
+              All News <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
 
@@ -121,8 +121,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between mb-8">
             <div>
-              <h2 className="text-2xl md:text-3xl font-bold mb-2">Neueste Artikel</h2>
-              <p className="text-muted-foreground">Jede Woche neue Tests & Guides</p>
+              <h2 className="text-2xl md:text-3xl font-bold mb-2">Latest Articles</h2>
+              <p className="text-muted-foreground">New tests & guides every week</p>
             </div>
           </div>
 
@@ -137,7 +137,7 @@ export default function Home() {
               href="/news"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border bg-card hover:bg-card/80 transition-all font-medium"
             >
-              Alle {samplePosts.length} Artikel anzeigen
+              Show all {samplePosts.length} articles
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -151,20 +151,20 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-semibold mb-4">
-                <TrendingUp className="w-3 h-3" /> +234% Wachstum in 2026
+                <TrendingUp className="w-3 h-3" /> +234% Growth in 2026
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Jede Woche neue <span className="text-red-500">KI-Tools im Video-Test</span>
+                New <span className="text-red-500">AI tools tested on video</span> every week
               </h2>
               <p className="text-muted-foreground mb-6">
-                Auf YouTube zeige ich dir jeden Schritt: Installation, Konfiguration und echte Tests. 
-                <strong> Verpass nicht den nächsten Upload</strong> – abonniere jetzt kostenlos.
+                On YouTube, I walk you through every step: installation, configuration, and real tests. 
+                <strong> Don't miss the next upload</strong> – subscribe for free now.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  'AnythingLLM, Ollama, Space Agent & mehr lokal zum Laufen bringen',
-                  'Ohne Cloud, ohne Abo – deine Daten bleiben bei dir',
-                  'Schritt-für-Schritt für Einsteiger & Profis',
+                  'Get AnythingLLM, Ollama, Space Agent & more running locally',
+                  'No cloud, no subscription – your data stays with you',
+                  'Step-by-step for beginners & pros',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <Play className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
@@ -178,7 +178,7 @@ export default function Home() {
                 className="btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-white font-semibold glow-hover"
               >
                 <Video className="w-5 h-5" />
-                YouTube abonnieren (kostenlos)
+                Subscribe on YouTube (free)
                 <ArrowRight className="w-5 h-5" />
               </a>
             </div>
@@ -195,15 +195,15 @@ export default function Home() {
             <div>
               <h2 className="text-2xl md:text-3xl font-bold mb-2">
                 <TrendingUp className="w-6 h-6 inline text-accent mr-2" />
-                Gerade <span className="text-accent">im Trend</span>
+                Trending <span className="text-accent">Now</span>
               </h2>
-              <p className="text-muted-foreground">20+ Tools getestet & bewertet</p>
+              <p className="text-muted-foreground">20+ Tools tested & reviewed</p>
             </div>
             <Link
               href="/tools"
               className="hidden sm:flex items-center gap-2 text-sm text-primary hover:text-accent transition-colors font-medium"
             >
-              Alle Tools <ChevronRight className="w-4 h-4" />
+              All Tools <ChevronRight className="w-4 h-4" />
             </Link>
           </div>
 
@@ -220,7 +220,7 @@ export default function Home() {
                   </div>
                   <div className="flex flex-col items-end gap-1">
                     {tool.isNew && (
-                      <span className="px-2 py-1 rounded-full text-xs font-semibold badge-new text-white">NEU</span>
+                      <span className="px-2 py-1 rounded-full text-xs font-semibold badge-new text-white">NEW</span>
                     )}
                     {tool.isTrending && (
                       <span className="flex items-center gap-1 text-xs text-accent">
@@ -247,7 +247,7 @@ export default function Home() {
                     tool.pricing === 'freemium' ? 'bg-accent/20 text-accent' :
                     'bg-muted text-muted-foreground'
                   }`}>
-                    {tool.pricing === 'free' ? 'Kostenlos' : tool.pricing === 'freemium' ? 'Freemium' : tool.price}
+                    {tool.pricing === 'free' ? 'Free' : tool.pricing === 'freemium' ? 'Freemium' : tool.price}
                   </span>
                 </div>
               </Link>
@@ -259,7 +259,7 @@ export default function Home() {
               href="/tools"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-border bg-card hover:bg-card/80 transition-all font-medium"
             >
-              Alle 20 Tools vergleichen <ArrowRight className="w-4 h-4" />
+              Compare all 20 Tools <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
@@ -272,21 +272,21 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-xs font-semibold mb-4">
-                <Sparkles className="w-3 h-3" /> Frühbucher: <strong>50% Rabatt</strong> (nur die ersten 50!)
+                <Sparkles className="w-3 h-3" /> Early Bird: <strong>50% off</strong> (first 50 only!)
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Lerne, mit <span className="gradient-text">KI Geld zu verdienen</span>
+                Learn to <span className="gradient-text">make money with AI</span>
               </h2>
               <p className="text-muted-foreground mb-6">
-                Midjourney kostet <strong className="line-through">60€/Monat</strong>, ChatGPT <strong className="line-through">20€/Monat</strong>.
-                Ich zeig dir, wie du alles kostenlos lokal betreibst – und damit sogar Geld verdienst.
+                Midjourney costs <strong className="line-through">€60/month</strong>, ChatGPT <strong className="line-through">€20/month</strong>.
+                I'll show you how to run everything locally for free – and even make money with it.
               </p>
               <ul className="space-y-3 mb-8">
                 {[
-                  'Lokale KI-Workflows: AnythingLLM, Ollama, Open WebUI – alles lokal, alles kostenlos',
-                  'KI-Agenten bauen: Hermes, Space Agent & Lobster Father im Praxiseinsatz',
-                  'Automatisierte Content-Produktion mit n8n + KI (YouTube, Blog, Social Media)',
-                  'Dein erster KI-Nebenjob: 500-2000€/Monat mit den richtigen Tools',
+                  'Local AI workflows: AnythingLLM, Ollama, Open WebUI – all local, all free',
+                  'Build AI agents: Hermes, Space Agent & Lobster Father in practice',
+                  'Automated content production with n8n + AI (YouTube, Blog, Social Media)',
+                  'Your first AI side hustle: €500-2000/month with the right tools',
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-3">
                     <div className="w-6 h-6 rounded-full bg-primary/20 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -302,14 +302,14 @@ export default function Home() {
                   className="btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-white font-semibold glow-hover"
                 >
                   <Zap className="w-5 h-5" />
-                  Early Access sichern
+                  Get Early Access
                   <ArrowRight className="w-5 h-5" />
                 </Link>
                 <Link
                   href="/newsletter"
                   className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-border bg-card hover:bg-card/80 transition-all text-sm"
                 >
-                  Kostenlosen Newsletter abonnieren
+                  Subscribe to free newsletter
                 </Link>
               </div>
             </div>
@@ -319,12 +319,12 @@ export default function Home() {
                   <div className="text-center p-8">
                     <Sparkles className="w-16 h-16 text-accent mx-auto mb-4 animate-float" />
                     <h3 className="text-2xl font-bold mb-2 gradient-text">KI Mastery</h3>
-                    <p className="text-muted-foreground mb-4">Der Komplettkurs</p>
+                    <p className="text-muted-foreground mb-4">The Complete Course</p>
                     {/* Anchoring: Zeig hohen Preis, dann reduzierten */}
                     <div className="space-y-2">
                       <div className="text-lg text-muted-foreground line-through">197€</div>
                       <div className="text-4xl font-bold gradient-text">97€</div>
-                      <div className="text-xs text-muted-foreground">Frühbucherpreis – nur die ersten 50</div>
+                      <div className="text-xs text-muted-foreground">Early bird price – only the first 50</div>
                     </div>
                     <div className="mt-6 flex items-center justify-center gap-1 text-yellow-500">
                       <Star className="w-4 h-4 fill-yellow-500" />
@@ -332,7 +332,7 @@ export default function Home() {
                       <Star className="w-4 h-4 fill-yellow-500" />
                       <Star className="w-4 h-4 fill-yellow-500" />
                       <Star className="w-4 h-4 fill-yellow-500" />
-                      <span className="text-muted-foreground text-xs ml-2">4.9/5 (24 Bewertungen)</span>
+                      <span className="text-muted-foreground text-xs ml-2">4.9/5 (24 Reviews)</span>
                     </div>
                   </div>
                 </div>
@@ -348,27 +348,27 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-10">
             <h2 className="text-3xl font-bold mb-4">
-              Häufige Fragen zu <span className="gradient-text">lokaler KI</span>
+              Frequently Asked Questions about <span className="gradient-text">Local AI</span>
             </h2>
-            <p className="text-muted-foreground">Die wichtigsten Antworten – kurz & verständlich</p>
+            <p className="text-muted-foreground">The most important answers – short & clear</p>
           </div>
           <div className="space-y-4">
             {[
               {
-                q: 'Was brauche ich für lokale KI?',
-                a: 'Einen PC mit mindestens 8GB RAM (besser 16-32GB). Mac Mini M4 oder ein Mittelklasse-PC reichen für die meisten Modelle. Alles kostenlos und Open Source.'
+                q: 'What do I need for local AI?',
+                a: 'A PC with at least 8GB RAM (16-32GB recommended). A Mac Mini M4 or a mid-range PC is sufficient for most models. Everything is free and open source.'
               },
               {
-                q: 'Ist lokale KI wirklich kostenlos?',
-                a: 'Ja. Tools wie Ollama, AnythingLLM und LM Studio sind komplett kostenlos. Du zahlst nur den Strom für deinen PC – kein Cloud-Abo.'
+                q: 'Is local AI really free?',
+                a: 'Yes. Tools like Ollama, AnythingLLM, and LM Studio are completely free. You only pay for the electricity for your PC – no cloud subscription.'
               },
               {
-                q: 'Welche KI kann ich lokal nutzen?',
-                a: 'Hermes, Deepseek, Llama, Mistral und viele mehr. 200+ Modelle laufen über Ollama. Für Bilder: Stable Diffusion, Flux. Für Code: Continue.dev.'
+                q: 'Which AI can I use locally?',
+                a: 'Hermes, Deepseek, Llama, Mistral, and many more. 200+ models run via Ollama. For images: Stable Diffusion, Flux. For code: Continue.dev.'
               },
               {
-                q: 'Lohnt sich ein KI-Kurs?',
-                a: 'Ja – wenn er praxisnah ist. Unser Kurs zeigt dir Schritt für Schritt, wie du alles einrichtest, Workflows baust und damit Geld verdienst. Inklusive Setup-Videos und Live-Support.'
+                q: 'Is an AI course worth it?',
+                a: 'Yes – if it is practical. Our course shows you step by step how to set everything up, build workflows, and make money with it. Includes setup videos and live support.'
               },
             ].map((faq, i) => (
               <details key={i} className="group rounded-2xl bg-card border border-border overflow-hidden">

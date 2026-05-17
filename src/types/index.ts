@@ -83,7 +83,7 @@ export interface GuideEntry {
   content: string
   category: string
   tags: string[]
-  level: 'Anfänger' | 'Mittel' | 'Fortgeschritten'
+  level: 'Beginner' | 'Intermediate' | 'Advanced'
   readTime: number
   publishedAt: string
   isNew: boolean

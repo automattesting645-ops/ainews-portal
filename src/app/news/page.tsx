@@ -7,15 +7,15 @@ import { samplePosts } from '@/data/sample'
 import BlogCard from '@/components/BlogCard'
 import Newsletter from '@/components/Newsletter'
 
-const categories = ['Alle', 'Google', 'Open Source', 'Lokale KI', 'Agenten', 'Coding', 'Hardware', 'Guide']
+const categories = ['All', 'Google', 'Open Source', 'Local AI', 'Agents', 'Coding', 'Hardware', 'Guide']
 
 export default function NewsPage() {
-  const [activeCategory, setActiveCategory] = useState('Alle')
+  const [activeCategory, setActiveCategory] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
 
   const filteredPosts = useMemo(() => {
     return samplePosts.filter((post) => {
-      const matchesCategory = activeCategory === 'Alle' ||
+      const matchesCategory = activeCategory === 'All' ||
         post.tags.some((t) => t.toLowerCase().includes(activeCategory.toLowerCase()))
       const matchesSearch = searchQuery === '' ||
         post.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -32,10 +32,10 @@ export default function NewsPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">KI-News</span>
+            <span className="gradient-text">AI News</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-6">
-            {samplePosts.length} Artikel zu lokaler KI, Open-Source-Tools & mehr. Täglich aktualisiert.
+            {samplePosts.length} articles about local AI, open-source tools & more. Updated daily.
           </p>
         </div>
 
@@ -44,7 +44,7 @@ export default function NewsPage() {
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
           <input
             type="text"
-            placeholder="Artikel suchen..."
+            placeholder="Search articles..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-12 pr-4 py-3 rounded-xl bg-card border border-border text-sm focus:outline-none focus:border-primary transition-colors"
@@ -64,7 +64,7 @@ export default function NewsPage() {
               }`}
             >
               {cat}
-              {cat !== 'Alle' && (
+              {cat !== 'All' && (
                 <span className="ml-1.5 text-xs opacity-60">
                   ({samplePosts.filter(p => p.tags.some(t => t.toLowerCase().includes(cat.toLowerCase()))).length})
                 </span>
@@ -75,7 +75,7 @@ export default function NewsPage() {
 
         {filteredPosts.length === 0 ? (
           <div className="text-center py-16">
-            <p className="text-muted-foreground">Keine Artikel gefunden für &quot;{searchQuery}&quot;</p>
+            <p className="text-muted-foreground">No articles found for &quot;{searchQuery}&quot;</p>
           </div>
         ) : (
           <>
@@ -90,7 +90,7 @@ export default function NewsPage() {
             <div className="mb-6">
               <h2 className="text-xl font-bold mb-4 flex items-center gap-2">
                 <Tag className="w-5 h-5 text-primary" />
-                Alle Artikel <span className="text-muted-foreground text-sm font-normal">({filteredPosts.length})</span>
+                All Articles <span className="text-muted-foreground text-sm font-normal">({filteredPosts.length})</span>
               </h2>
             </div>
 

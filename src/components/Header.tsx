@@ -29,7 +29,7 @@ export default function Header() {
             </div>
             <div className="flex flex-col">
               <span className="text-xl font-bold gradient-text">AI News</span>
-              <span className="text-xs text-muted-foreground -mt-1">Daily KI-Updates</span>
+              <span className="text-xs text-muted-foreground -mt-1">Daily AI Updates</span>
             </div>
           </Link>
 
@@ -95,7 +95,7 @@ export default function Header() {
                   onClick={() => setIsMenuOpen(false)}
                   className="btn-primary w-full text-center px-4 py-3 rounded-lg text-sm font-medium text-white"
                 >
-                  Newsletter abonnieren
+                  Subscribe to Newsletter
                 </Link>
               </div>
             </nav>

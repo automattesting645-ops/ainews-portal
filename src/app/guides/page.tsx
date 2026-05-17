@@ -4,14 +4,14 @@ import Newsletter from '@/components/Newsletter'
 import { sampleGuides } from '@/data/sample'
 
 export const metadata = {
-  title: 'KI-Guides & Tutorials | AI News',
-  description: 'Lerne, wie du KI-Tools richtig einsetzt. Schritt-für-Schritt Guides von AI-n_sights.',
+  title: 'AI Guides & Tutorials | AI News',
+  description: 'Learn how to use AI tools properly. Step-by-step guides from AI-n_sights.',
 }
 
 const levelColors = {
-  'Anfänger': 'bg-success/20 text-success',
-  'Mittel': 'bg-accent/20 text-accent',
-  'Fortgeschritten': 'bg-secondary/20 text-secondary',
+  'Beginner': 'bg-success/20 text-success',
+  'Intermediate': 'bg-accent/20 text-accent',
+  'Advanced': 'bg-secondary/20 text-secondary',
 }
 
 export default function GuidesPage() {
@@ -25,16 +25,16 @@ export default function GuidesPage() {
             <BookOpen className="w-7 h-7 text-primary" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            KI-<span className="gradient-text">Guides</span>
+            AI-<span className="gradient-text">Guides</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            {sampleGuides.length} ausführliche Schritt-für-Schritt-Anleitungen. Von Anfänger bis Profi.
+            {sampleGuides.length} detailed step-by-step guides. From beginner to pro.
           </p>
         </div>
 
         {/* Category Filter */}
         <div className="flex flex-wrap items-center justify-center gap-2 mb-10">
-          <span className="text-xs text-muted-foreground mr-2">Kategorien:</span>
+          <span className="text-xs text-muted-foreground mr-2">Categories:</span>
           {categories.map((cat) => (
             <span key={cat} className="text-xs px-3 py-1.5 rounded-full bg-card border border-border">
               {cat}
@@ -55,7 +55,7 @@ export default function GuidesPage() {
                 </span>
                 <div className="flex items-center gap-2">
                   {guide.isNew && (
-                    <span className="px-2 py-0.5 rounded-full text-xs font-semibold badge-new text-white">NEU</span>
+                    <span className="px-2 py-0.5 rounded-full text-xs font-semibold badge-new text-white">NEW</span>
                   )}
                   <span className="flex items-center gap-1 text-xs text-muted-foreground">
                     <Clock className="w-3 h-3" /> {guide.readTime} Min
@@ -69,7 +69,7 @@ export default function GuidesPage() {
               <div className="flex items-center justify-between mt-auto pt-4 border-t border-border">
                 <span className="text-xs text-muted-foreground">{guide.category}</span>
                 <span className="flex items-center gap-1 text-sm text-primary font-medium">
-                  Lesen <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  Read <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
               </div>
             </Link>

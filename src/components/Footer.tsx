@@ -15,9 +15,9 @@ export default function Footer() {
   ]
 
   const resources = [
-    { label: 'KI-Glossar', href: '/glossar' },
-    { label: 'Tool-Vergleich', href: '/tools' },
-    { label: 'Kurs: KI Mastery', href: '/kurs' },
+    { label: 'AI Glossary', href: '/glossar' },
+    { label: 'Tool Comparison', href: '/tools' },
+    { label: 'Course: AI Mastery', href: '/kurs' },
     { label: 'Blog', href: '/news' },
   ]
 
@@ -39,7 +39,7 @@ export default function Footer() {
               <span className="text-lg font-bold gradient-text">AI News</span>
             </Link>
             <p className="text-sm text-muted-foreground mb-4">
-              Tägliche KI-News, ehrliche Tool-Reviews und Guides. Kein Hype, nur Wert.
+              Daily AI News, honest tool reviews and guides. No hype, just value.
             </p>
             <div className="flex items-center gap-3">
               {socials.map((social) => (
@@ -58,7 +58,7 @@ export default function Footer() {
           {/* Quick Links */}
           <div>
             <h3 className="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-4">
-              Schnellzugriff
+              Quick Links
             </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
@@ -78,7 +78,7 @@ export default function Footer() {
           {/* Resources */}
           <div>
             <h3 className="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-4">
-              Ressourcen
+              Resources
             </h3>
             <ul className="space-y-3">
               {resources.map((link) => (
@@ -98,10 +98,10 @@ export default function Footer() {
           {/* Newsletter Mini */}
           <div>
             <h3 className="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-4">
-              Keine News verpassen
+              Don't miss any news
             </h3>
             <p className="text-sm text-muted-foreground mb-4">
-              Erhalte die besten KI-Tools direkt in deine Inbox.
+              Get the best AI tools straight to your inbox.
             </p>
             <form
               action="#"
@@ -110,14 +110,14 @@ export default function Footer() {
             >
               <input
                 type="email"
-                placeholder="Deine E-Mail"
+                placeholder="Your Email"
                 className="px-4 py-2.5 rounded-lg bg-background border border-border text-sm focus:outline-none focus:border-primary transition-colors"
               />
               <button
                 type="submit"
                 className="btn-primary px-4 py-2.5 rounded-lg text-sm font-medium text-white"
               >
-                Kostenlos abonnieren
+                Subscribe Free
               </button>
             </form>
           </div>
@@ -126,7 +126,7 @@ export default function Footer() {
         {/* Bottom */}
         <div className="mt-12 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            &copy; {currentYear} AI News. Kein Investment-, Steuer- oder Rechtsberatung.
+            &copy; {currentYear} AI News. Not investment, tax, or legal advice.
           </p>
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
             <Link href="/impressum" className="hover:text-foreground transition-colors">Impressum</Link>

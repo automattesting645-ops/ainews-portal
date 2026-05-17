@@ -6,18 +6,18 @@ import { Video, Clock, ExternalLink, Search, ChevronDown, ArrowRight, Zap, Trend
 import Newsletter from '@/components/Newsletter'
 import { sampleVideos } from '@/data/sample'
 
-const categories = ['Alle', 'Tool', 'Guide', 'News', 'Test']
+const categories = ['All', 'Tool', 'Guide', 'News', 'Test']
 const INITIAL_SHOW = 3
 const LOAD_MORE = 6
 
 export default function VideosPage() {
-  const [activeCategory, setActiveCategory] = useState('Alle')
+  const [activeCategory, setActiveCategory] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
   const [visibleCount, setVisibleCount] = useState(INITIAL_SHOW)
 
   const filteredVideos = useMemo(() => {
     return sampleVideos.filter((video) => {
-      const matchesCategory = activeCategory === 'Alle' || video.category === activeCategory
+      const matchesCategory = activeCategory === 'All' || video.category === activeCategory
       const matchesSearch = video.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
         video.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()))
       return matchesCategory && matchesSearch
@@ -47,7 +47,7 @@ export default function VideosPage() {
             <span className="gradient-text">Videos</span>
           </h1>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Wöchentliche Videos zu lokaler KI, Open-Source-Tools & mehr.<br />
+            Weekly videos about local AI, open-source tools & more.<br />
             <Link href="https://youtube.com/@AI-n_sights" className="text-primary hover:text-accent">@AI-n_sights</Link>
           </p>
         </div>
@@ -57,8 +57,8 @@ export default function VideosPage() {
           <a href="https://youtube.com/@AI-n_sights?sub_confirmation=1" target="_blank"
             className="flex items-center gap-2 px-4 py-2 rounded-xl bg-red-500/10 border border-red-500/20 text-sm hover:bg-red-500/20 transition-all">
             <TrendingUp className="w-4 h-4 text-red-500" />
-            <span className="text-red-400 font-semibold">YouTube abonnieren</span>
-            <span className="text-xs text-muted-foreground">+ wöchentlich neu</span>
+            <span className="text-red-400 font-semibold">Subscribe on YouTube</span>
+            <span className="text-xs text-muted-foreground">+ new weekly</span>
           </a>
         </div>
 
@@ -67,7 +67,7 @@ export default function VideosPage() {
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
           <input
             type="text"
-            placeholder="Video suchen..."
+            placeholder="Search videos..."
             value={searchQuery}
             onChange={(e) => {
               setSearchQuery(e.target.value)
@@ -105,7 +105,7 @@ export default function VideosPage() {
             >
               <div className="relative aspect-video overflow-hidden">
                 <img
-                  src={`https://i.ytimg.com/vi/${video.youtubeId}/hqdefault.jpg`}
+                  src={`https://i.ytimg.com/vi/${video.youtubeId}/sddefault.jpg`}
                   alt={video.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
@@ -120,7 +120,7 @@ export default function VideosPage() {
                 </span>
                 {video.isNew && (
                   <span className="absolute top-3 left-3 px-2 py-1 rounded-full text-xs font-semibold badge-new text-white">
-                    NEU
+                    NEW
                   </span>
                 )}
                 <span className="absolute top-3 right-3 px-2 py-1 rounded-full text-xs font-semibold bg-background/80 backdrop-blur-sm">
@@ -134,7 +134,7 @@ export default function VideosPage() {
                 <div className="flex items-center justify-between text-xs text-muted-foreground">
                   <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{video.duration}</span>
                   <span className="flex items-center gap-1 text-primary font-medium">
-                    <ExternalLink className="w-3 h-3" />Ansehen
+                    <ExternalLink className="w-3 h-3" />Watch
                   </span>
                 </div>
               </div>
@@ -144,7 +144,7 @@ export default function VideosPage() {
 
         {filteredVideos.length === 0 ? (
           <div className="text-center py-16">
-            <p className="text-muted-foreground">Keine Videos gefunden für &quot;{searchQuery}&quot;</p>
+            <p className="text-muted-foreground">No videos found for &quot;{searchQuery}&quot;</p>
           </div>
         ) : (
           <div className="text-center mb-12">
@@ -152,7 +152,7 @@ export default function VideosPage() {
               onClick={handleShowMore}
               className="group inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-card border border-border hover:border-primary/40 transition-all font-medium text-sm"
             >
-              Mehr Videos laden
+              Load More Videos
               <ChevronDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
             </button>
           </div>
@@ -161,11 +161,11 @@ export default function VideosPage() {
         {/* YouTube CTA - Scarcity + Social Proof */}
         <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-red-500/10 to-primary/10 border border-red-500/20 mb-8">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/20 text-red-400 text-xs font-semibold mb-4">
-            <TrendingUp className="w-3 h-3" /> +120% Wachstum diesen Monat
+            <TrendingUp className="w-3 h-3" /> +120% Growth this month
           </div>
-          <h2 className="text-2xl font-bold mb-2">Verpass kein Video mehr</h2>
+          <h2 className="text-2xl font-bold mb-2">Don't miss any more videos</h2>
           <p className="text-muted-foreground mb-6 max-w-md mx-auto text-sm">
-            Jede Woche neue Tests, Tools und Tutorials. <span className="text-foreground font-semibold">Jetzt abonnieren und keinen Upload mehr verpassen.</span>
+            New tests, tools and tutorials every week. <span className="text-foreground font-semibold">Subscribe now and never miss an upload.</span>
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <a
@@ -174,7 +174,7 @@ export default function VideosPage() {
               className="btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-xl text-white font-semibold glow-hover"
             >
               <Video className="w-5 h-5" />
-              YouTube abonnieren
+              Subscribe on YouTube
               <ArrowRight className="w-5 h-5" />
             </a>
             <Link
@@ -182,7 +182,7 @@ export default function VideosPage() {
               className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl border border-border bg-card hover:bg-card/80 transition-all text-sm"
             >
               <Zap className="w-4 h-4 text-accent" />
-              Newsletter + exklusive Tipps
+              Newsletter + exclusive tips
             </Link>
           </div>
         </div>

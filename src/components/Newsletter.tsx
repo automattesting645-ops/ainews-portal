@@ -21,13 +21,13 @@ export default function Newsletter({ compact = false }: NewsletterProps) {
           </div>
           
           <h2 className={`font-bold mb-4 ${compact ? 'text-2xl' : 'text-3xl md:text-4xl'}`}>
-            <span className="gradient-text">KI-News</span> jeden Morgen
+            <span className="gradient-text">AI News</span> Every Morning
           </h2>
           
           <p className="text-muted-foreground mb-6">
             {compact
-              ? 'Die wichtigsten KI-Updates. 5 Minuten, täglich, kostenlos.'
-              : 'Kein Spam, kein Hype. Jeden Morgen die 3 wichtigsten KI-News + ein exklusives Tool-Review direkt in deine Inbox.'
+              ? 'The most important AI updates. 5 minutes, daily, free.'
+              : 'No spam, no hype. Every morning the 3 most important AI news + an exclusive tool review straight to your inbox.'
             }
           </p>
 
@@ -37,7 +37,7 @@ export default function Newsletter({ compact = false }: NewsletterProps) {
           >
             <input
               type="email"
-              placeholder="Deine E-Mail-Adresse"
+              placeholder="Your Email Address"
               required
               className="flex-1 px-5 py-3.5 rounded-xl bg-background border border-border text-sm focus:outline-none focus:border-primary transition-colors"
             />
@@ -46,13 +46,13 @@ export default function Newsletter({ compact = false }: NewsletterProps) {
               className="btn-primary px-6 py-3.5 rounded-xl text-sm font-semibold text-white flex items-center justify-center gap-2 glow-hover"
             >
               <Zap className="w-4 h-4" />
-              Kostenlos abonnieren
+              Subscribe Free
               <ArrowRight className="w-4 h-4" />
             </button>
           </form>
 
           <p className="mt-4 text-xs text-muted-foreground">
-            Kein Spam. Jederzeit kündbar. Bereits 2.347+ Abonnenten.
+            No spam. Unsubscribe anytime. 2,347+ subscribers already.
           </p>
         </div>
       </div>

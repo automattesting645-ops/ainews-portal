@@ -32,7 +32,7 @@ export default function LatestVideo() {
         const title = entry.querySelector('title')?.textContent || ''
         const videoId = entry.querySelector('yt\\:videoId')?.textContent
           || entry.querySelector('videoId')?.textContent || ''
-        const thumbnail = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`
+        const thumbnail = `https://i.ytimg.com/vi/${videoId}/sddefault.jpg`
 
         if (!cancelled) {
           setVideo({ title, videoId, thumbnail })
@@ -50,7 +50,7 @@ export default function LatestVideo() {
   if (loading) {
     return (
       <div className="aspect-video rounded-2xl bg-card border border-border animate-pulse flex items-center justify-center">
-        <div className="text-muted-foreground text-sm">Lade neustes Video...</div>
+        <div className="text-muted-foreground text-sm">Loading latest video...</div>
       </div>
     )
   }
@@ -78,15 +78,15 @@ export default function LatestVideo() {
         </div>
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 pt-12">
           <div className="inline-block px-2 py-1 rounded bg-red-600 text-white text-xs font-semibold mb-2">
-            NEUESTES VIDEO
+            LATEST VIDEO
           </div>
           <h3 className="text-white font-bold text-lg line-clamp-2">{video.title}</h3>
         </div>
       </div>
       <div className="p-4 flex items-center justify-between text-sm">
-        <span className="text-muted-foreground">Jetzt ansehen auf YouTube</span>
+        <span className="text-muted-foreground">Watch now on YouTube</span>
         <span className="flex items-center gap-1 text-primary font-medium">
-          <ExternalLink className="w-4 h-4" /> Ansehen
+          <ExternalLink className="w-4 h-4" /> Watch
         </span>
       </div>
     </a>

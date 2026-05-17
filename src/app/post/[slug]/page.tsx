@@ -11,7 +11,7 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const slug = (await params).slug
   const post = samplePosts.find((p) => p.slug === slug)
-  if (!post) return { title: 'Nicht gefunden' }
+  if (!post) return { title: 'Not Found' }
   return {
     title: post.seoTitle || post.title,
     description: post.seoDescription || post.excerpt,
@@ -37,7 +37,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
     news: 'News',
     tool: 'Tool',
     guide: 'Guide',
-    opinion: 'Meinung',
+    opinion: 'Opinion',
   }
 
   return (
@@ -59,7 +59,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-card/80 backdrop-blur-sm border border-border text-sm text-muted-foreground hover:text-foreground mb-6 transition-all"
         >
           <ArrowLeft className="w-4 h-4" />
-          Zurück zur Übersicht
+          Back to Overview
         </Link>
 
         {/* Header */}
@@ -79,17 +79,17 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
           <h1 className="text-3xl md:text-5xl font-bold mb-6">{post.title}</h1>
 
           <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground mb-8 pb-8 border-b border-border">
-            <span>Von {post.author}</span>
+            <span>By {post.author}</span>
             <span className="flex items-center gap-1">
               <Clock className="w-4 h-4" />
-              {post.readTime} Min. Lesezeit
+              {post.readTime} min read
             </span>
             <span className="flex items-center gap-1">
               <Eye className="w-4 h-4" />
               {post.views.toLocaleString()} Views
             </span>
             <span>
-              {new Date(post.publishedAt).toLocaleDateString('de-DE', {
+              {new Date(post.publishedAt).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'long',
                 day: 'numeric',
@@ -97,7 +97,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
             </span>
             <button className="ml-auto flex items-center gap-1 px-3 py-1.5 rounded-lg bg-card border border-border hover:bg-background transition-all">
               <Share2 className="w-4 h-4" />
-              Teilen
+              Share
             </button>
           </div>
 
@@ -131,7 +131,7 @@ export default async function PostPage({ params }: { params: Promise<{ slug: str
         {/* Related Posts */}
         {relatedPosts.length > 0 && (
           <div className="mt-12 mb-16">
-            <h2 className="text-2xl font-bold mb-6 gradient-text">Weitere Artikel</h2>
+            <h2 className="text-2xl font-bold mb-6 gradient-text">More Articles</h2>
             <div className="grid md:grid-cols-2 gap-6">
               {relatedPosts.map((related) => (
                 <Link

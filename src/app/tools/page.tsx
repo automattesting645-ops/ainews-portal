@@ -5,14 +5,14 @@ import Link from 'next/link'
 import { Sparkles, TrendingUp, Star, ArrowRight, Zap, Search } from 'lucide-react'
 import { sampleTools } from '@/data/sample'
 
-const categories = ['Alle', 'LLM', 'Suche', 'Video', 'Audio', 'Bild', 'Code', 'Automatisierung', 'Marketing']
+const categories = ['All', 'LLM', 'Search', 'Video', 'Audio', 'Image', 'Code', 'Automation', 'Marketing']
 
 export default function ToolsPage() {
-  const [activeCategory, setActiveCategory] = useState('Alle')
+  const [activeCategory, setActiveCategory] = useState('All')
   const [searchQuery, setSearchQuery] = useState('')
 
   const filteredTools = sampleTools.filter((tool) => {
-    const matchesCategory = activeCategory === 'Alle' || tool.category === activeCategory
+    const matchesCategory = activeCategory === 'All' || tool.category === activeCategory
     const matchesSearch = tool.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       tool.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
       tool.tags.some((t) => t.toLowerCase().includes(searchQuery.toLowerCase()))
@@ -28,10 +28,10 @@ export default function ToolsPage() {
             <Sparkles className="w-7 h-7 text-secondary" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="gradient-text">KI-Tools</span> 2026
+            <span className="gradient-text">AI Tools</span> 2026
           </h1>
           <p className="text-lg text-muted-foreground">
-            Getestet, bewertet, verglichen. {filteredTools.length} Tools gefunden.
+            Tested, rated, compared. {filteredTools.length} tools found.
           </p>
         </div>
 
@@ -40,7 +40,7 @@ export default function ToolsPage() {
           <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-muted-foreground" />
           <input
             type="text"
-            placeholder="Tool suchen..."
+            placeholder="Search tools..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full pl-12 pr-4 py-3 rounded-xl bg-card border border-border text-sm focus:outline-none focus:border-primary transition-colors"
@@ -67,7 +67,7 @@ export default function ToolsPage() {
         {/* Tools Grid */}
         {filteredTools.length === 0 ? (
           <div className="text-center py-16">
-            <p className="text-muted-foreground">Keine Tools gefunden für &quot;{searchQuery}&quot;</p>
+            <p className="text-muted-foreground">No tools found for &quot;{searchQuery}&quot;</p>
           </div>
         ) : (
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -83,7 +83,7 @@ export default function ToolsPage() {
                   </div>
                   <div className="flex flex-col items-end gap-1">
                     {tool.isNew && (
-                      <span className="px-2 py-0.5 rounded-full text-xs font-semibold badge-new text-white">NEU</span>
+                      <span className="px-2 py-0.5 rounded-full text-xs font-semibold badge-new text-white">NEW</span>
                     )}
                   </div>
                 </div>
@@ -108,12 +108,12 @@ export default function ToolsPage() {
                     tool.pricing === 'freemium' ? 'bg-accent/20 text-accent' :
                     'bg-muted text-muted-foreground'
                   }`}>
-                    {tool.pricing === 'free' ? 'Kostenlos' : tool.pricing === 'freemium' ? 'Freemium' : tool.price}
+                    {tool.pricing === 'free' ? 'Free' : tool.pricing === 'freemium' ? 'Freemium' : tool.price}
                   </span>
                 </div>
                 {tool.isTrending && (
                   <div className="mt-3 flex items-center gap-1 text-xs text-accent">
-                    <TrendingUp className="w-3 h-3" /> Gerade im Trend
+                    <TrendingUp className="w-3 h-3" /> Trending Now
                   </div>
                 )}
               </Link>
@@ -123,10 +123,10 @@ export default function ToolsPage() {
 
         {/* CTA */}
         <div className="text-center p-12 rounded-2xl bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 border border-border">
-          <h2 className="text-2xl font-bold mb-3">Kennst du ein Tool, das hier fehlt?</h2>
-          <p className="text-muted-foreground mb-6">Schlag uns ein KI-Tool vor.</p>
+          <h2 className="text-2xl font-bold mb-3">Know a tool that's missing here?</h2>
+          <p className="text-muted-foreground mb-6">Suggest an AI tool to us.</p>
           <Link href="/newsletter" className="btn-primary inline-flex items-center gap-2 px-6 py-3 rounded-xl text-white font-medium">
-            <Zap className="w-4 h-4" /> Newsletter abonnieren <ArrowRight className="w-4 h-4" />
+            <Zap className="w-4 h-4" /> Subscribe to Newsletter <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

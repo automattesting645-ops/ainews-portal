@@ -2,23 +2,23 @@ import { BookOpen, ArrowRight } from 'lucide-react'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'KI-Glossar - Fachbegriffe einfach erklärt | AI News',
-  description: 'KI-Fachbegriffe einfach erklärt. Von A wie Agent bis Z wie Zero-Shot Learning.',
+  title: 'AI Glossary - Technical terms explained simply | AI News',
+  description: 'AI technical terms explained simply. From A for Agent to Z for Zero-Shot Learning.',
 }
 
 const terms = [
-  { term: 'Agent', definition: 'Ein KI-Agent ist ein autonomes System, das eigenständig Aufgaben ausführen kann, z.B. Daten abrufen, API-Aufrufe tätigen oder Entscheidungen treffen.' },
-  { term: 'API', definition: 'Schnittstelle, die es Programmen erlaubt, miteinander zu kommunizieren. Per KI-API kannst du Sprachmodelle in eigene Anwendungen einbauen.' },
-  { term: 'ChatGPT', definition: 'KI-Chatbot von OpenAI. Das bekannteste Sprachmodell, das Texte versteht und generiert. Basis für viele KI-Anwendungen.' },
-  { term: 'Claude', definition: 'KI-Assistent von Anthropic. Bekannt für lange Kontexte (200k Token) und hohe Verlässlichkeit bei komplexen Aufgaben.' },
-  { term: 'Embeddings', definition: 'Vektordarstellungen von Text, die Maschinen verstehen können. Grundlage für semantische Suche und RAG-Systeme.' },
-  { term: 'Fine-Tuning', definition: 'Nachträgliches Training eines KI-Modells mit eigenen Daten, um es für spezifische Aufgaben zu optimieren.' },
-  { term: 'GPT', definition: '"Generative Pre-trained Transformer" - Die Modellfamilie von OpenAI. Aktuellste Version: GPT-4 und GPT-4o.' },
-  { term: 'Halluzination', definition: 'Wenn eine KI scheinbar plausible, aber faktisch falsche Informationen ausgibt. Das größte Problem aktueller KI-Modelle.' },
-  { term: 'LLM', definition: 'Large Language Model - Großes Sprachmodell. Ein KI-Modell, das auf riesigen Textmengen trainiert wurde und menschenähnliche Texte generieren kann.' },
-  { term: 'Prompt', definition: 'Die Eingabe, die du einer KI gibst. Ein guter Prompt ist der Schlüssel zu guten KI-Ergebnissen.' },
-  { term: 'RAG', definition: 'Retrieval-Augmented Generation - Eine Technik, bei der die KI zusätzliches Wissen aus einer Datenbank abruft, um bessere Antworten zu geben.' },
-  { term: 'Token', definition: 'Die kleinste Einheit, die ein Sprachmodell verarbeitet. 1 Token ~= 0.75 Wörter. Bestimmt die Kosten und Länge von KI-Anfragen.' },
+  { term: 'Agent', definition: 'An AI agent is an autonomous system that can execute tasks independently, e.g., retrieve data, make API calls, or make decisions.' },
+  { term: 'API', definition: 'An interface that allows programs to communicate with each other. Via AI API you can integrate language models into your own applications.' },
+  { term: 'ChatGPT', definition: 'AI chatbot from OpenAI. The most well-known language model that understands and generates text. Foundation for many AI applications.' },
+  { term: 'Claude', definition: 'AI assistant from Anthropic. Known for long contexts (200k tokens) and high reliability on complex tasks.' },
+  { term: 'Embeddings', definition: 'Vector representations of text that machines can understand. Foundation for semantic search and RAG systems.' },
+  { term: 'Fine-Tuning', definition: 'Subsequent training of an AI model with custom data to optimize it for specific tasks.' },
+  { term: 'GPT', definition: '"Generative Pre-trained Transformer" - The model family from OpenAI. Latest version: GPT-4 and GPT-4o.' },
+  { term: 'Hallucination', definition: 'When an AI outputs seemingly plausible but factually incorrect information. The biggest problem of current AI models.' },
+  { term: 'LLM', definition: 'Large Language Model. An AI model trained on massive amounts of text that can generate human-like text.' },
+  { term: 'Prompt', definition: 'The input you give to an AI. A good prompt is the key to good AI results.' },
+  { term: 'RAG', definition: 'Retrieval-Augmented Generation - A technique where the AI retrieves additional knowledge from a database to provide better answers.' },
+  { term: 'Token', definition: 'The smallest unit that a language model processes. 1 token ~= 0.75 words. Determines the cost and length of AI requests.' },
 ]
 
 export default function GlossarPage() {
@@ -30,9 +30,9 @@ export default function GlossarPage() {
             <BookOpen className="w-7 h-7 text-accent" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            KI-<span className="gradient-text">Glossar</span>
+            AI-<span className="gradient-text">Glossary</span>
           </h1>
-          <p className="text-lg text-muted-foreground">Fachbegriffe einfach erklärt. Von A bis Z.</p>
+          <p className="text-lg text-muted-foreground">Technical terms explained simply. From A to Z.</p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-4 mb-12">
@@ -45,9 +45,9 @@ export default function GlossarPage() {
         </div>
 
         <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-accent/5 to-primary/5 border border-border">
-          <p className="text-muted-foreground mb-4">Fehlt ein Begriff? Schlag ihn uns vor.</p>
+          <p className="text-muted-foreground mb-4">Missing a term? Suggest it to us.</p>
           <Link href="/newsletter" className="text-primary hover:text-accent text-sm font-medium inline-flex items-center gap-1">
-            Newsletter abonnieren <ArrowRight className="w-4 h-4" />
+            Subscribe to Newsletter <ArrowRight className="w-4 h-4" />
           </Link>
         </div>
       </div>

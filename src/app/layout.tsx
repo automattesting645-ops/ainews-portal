@@ -17,11 +17,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "AI News - Lokale KI-Tools, Guides & News 2026",
+    default: "AI News - Local AI Tools, Guides & News 2026",
     template: "%s | AI News"
   },
-  description: "Ehrliche Tests lokaler KI-Tools. AnythingLLM, Ollama, OpenCode & mehr. Ohne Cloud, ohne Hype. Wöchentliche YouTube-Videos + Schritt-für-Schritt Guides.",
-  keywords: ["KI Tools", "Lokale KI", "Open Source KI", "AnythingLLM", "Ollama", "AI News Deutsch", "KI Kurse", "KI Agenten"],
+  description: "Honest tests of local AI tools. AnythingLLM, Ollama, OpenCode & more. No cloud, no hype. Weekly YouTube videos + step-by-step guides.",
+  keywords: ["AI Tools", "Local AI", "Open Source AI", "AnythingLLM", "Ollama", "AI News", "AI Courses", "AI Agents"],
   authors: [{ name: "AI-n_sights", url: "https://youtube.com/@AI-n_sights" }],
   creator: "AI-n_sights",
   publisher: "AI-n_sights",
@@ -31,17 +31,17 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "AI News - Lokale KI-Tools, Guides & News 2026",
-    description: "Ehrliche Tests lokaler KI-Tools. AnythingLLM, Ollama, OpenCode & mehr. Ohne Cloud, ohne Hype.",
+    title: "AI News - Local AI Tools, Guides & News 2026",
+    description: "Honest tests of local AI tools. AnythingLLM, Ollama, OpenCode & more. No cloud, no hype.",
     type: "website",
-    locale: "de_DE",
+    locale: "en_US",
     siteName: "AI News",
     url: "https://ai-news-portal.netlify.app",
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI News - Lokale KI-Tools, Guides & News 2026",
-    description: "Ehrliche Tests lokaler KI-Tools. AnythingLLM, Ollama, OpenCode & mehr.",
+    title: "AI News - Local AI Tools, Guides & News 2026",
+    description: "Honest tests of local AI tools. AnythingLLM, Ollama, OpenCode & more.",
     site: "@Ai_Ne_ws",
     creator: "@Ai_Ne_ws",
   },
@@ -68,7 +68,7 @@ const organizationSchema = {
     "https://youtube.com/@AI-n_sights",
     "https://x.com/Ai_Ne_ws",
   ],
-  description: "KI-News, Tool-Reviews und Guides für lokale Open-Source-KI.",
+  description: "AI News, tool reviews and guides for local open-source AI.",
   founder: {
     "@type": "Person",
     name: "AI-n_sights",
@@ -81,7 +81,7 @@ const websiteSchema = {
   "@type": "WebSite",
   name: "AI News",
   url: "https://ai-news-portal.netlify.app",
-  description: "KI-News, Tool-Reviews und Guides für lokale Open-Source-KI.",
+  description: "AI News, tool reviews and guides for local open-source AI.",
   potentialAction: {
     "@type": "SearchAction",
     target: {
@@ -99,7 +99,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="de"
+      lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>

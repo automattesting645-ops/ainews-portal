@@ -19,7 +19,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
     news: 'News',
     tool: 'Tool',
     guide: 'Guide',
-    opinion: 'Meinung',
+    opinion: 'Opinion',
   }
 
   if (featured) {
@@ -78,7 +78,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
             <div className="flex items-center gap-4">
               <span className="flex items-center gap-1">
                 <Clock className="w-4 h-4" />
-                {post.readTime} Min. Lesezeit
+                {post.readTime} min read
               </span>
               <span className="flex items-center gap-1">
                 <Eye className="w-4 h-4" />
@@ -86,7 +86,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
               </span>
             </div>
             <span className="text-xs">
-              {new Date(post.publishedAt).toLocaleDateString('de-DE', {
+              {new Date(post.publishedAt).toLocaleDateString('en-US', {
                 year: 'numeric',
                 month: 'short',
                 day: 'numeric',
@@ -142,7 +142,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
           <div className="flex items-center gap-3">
             <span className="flex items-center gap-1">
               <Clock className="w-3 h-3" />
-              {post.readTime} Min
+              {post.readTime} min
             </span>
             <span className="flex items-center gap-1">
               <Eye className="w-3 h-3" />
@@ -150,7 +150,7 @@ export default function BlogCard({ post, featured = false }: BlogCardProps) {
             </span>
           </div>
           <span>
-            {new Date(post.publishedAt).toLocaleDateString('de-DE', {
+            {new Date(post.publishedAt).toLocaleDateString('en-US', {
               year: 'numeric',
               month: 'short',
               day: 'numeric',

@@ -60,7 +60,7 @@ export default function SearchOverlay({ open, onClose }: { open: boolean; onClos
   }
 
   const typeLabel = {
-    post: 'Artikel',
+    post: 'Article',
     tool: 'Tool',
     guide: 'Guide',
     video: 'Video',
@@ -79,7 +79,7 @@ export default function SearchOverlay({ open, onClose }: { open: boolean; onClos
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Durchsuche Artikel, Tools, Guides & Videos..."
+            placeholder="Search articles, tools, guides & videos..."
             className="w-full pl-14 pr-14 py-5 text-lg bg-card border-2 border-primary/30 rounded-2xl focus:border-primary outline-none transition-colors"
           />
           <button
@@ -124,7 +124,7 @@ export default function SearchOverlay({ open, onClose }: { open: boolean; onClos
 
         {query && results.length === 0 && (
           <div className="mt-8 text-center">
-            <p className="text-muted-foreground">Keine Ergebnisse für &ldquo;{query}&rdquo;</p>
+            <p className="text-muted-foreground">No results for &ldquo;{query}&rdquo;</p>
           </div>
         )}
       </div>
