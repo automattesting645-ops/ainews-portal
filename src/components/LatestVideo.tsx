@@ -32,7 +32,7 @@ export default function LatestVideo() {
         const title = entry.querySelector('title')?.textContent || ''
         const videoId = entry.querySelector('yt\\:videoId')?.textContent
           || entry.querySelector('videoId')?.textContent || ''
-        const thumbnail = `https://i.ytimg.com/vi/${videoId}/sddefault.jpg`
+        const thumbnail = `https://i.ytimg.com/vi/${videoId}/maxresdefault.jpg`
 
         if (!cancelled) {
           setVideo({ title, videoId, thumbnail })

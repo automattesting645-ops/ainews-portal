@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: 'https://ai-news-portal.netlify.app/videos', lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.8 },
     { url: 'https://ai-news-portal.netlify.app/guides', lastModified: new Date(), changeFrequency: 'weekly' as const, priority: 0.7 },
     { url: 'https://ai-news-portal.netlify.app/newsletter', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.6 },
-    { url: 'https://ai-news-portal.netlify.app/glossar', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.5 },
+
     { url: 'https://ai-news-portal.netlify.app/kurs', lastModified: new Date(), changeFrequency: 'monthly' as const, priority: 0.8 },
     { url: 'https://ai-news-portal.netlify.app/impressum', lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.1 },
     { url: 'https://ai-news-portal.netlify.app/datenschutz', lastModified: new Date(), changeFrequency: 'yearly' as const, priority: 0.1 },

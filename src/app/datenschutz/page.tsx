@@ -75,7 +75,7 @@ export default function DatenschutzPage() {
               Auf dieser Website sind Videos von YouTube eingebunden. Betreiber von YouTube ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Wenn du ein YouTube-Video auf unserer Website aufrufst, wird eine Verbindung zu den YouTube-Servern hergestellt. Dabei wird dem YouTube-Server mitgeteilt, welche unserer Seiten du besucht hast. Wenn du in deinem YouTube-Konto eingeloggt bist, ermöglichst du YouTube, dein Surfverhalten direkt deinem persönlichen Profil zuzuordnen.
             </p>
             <p className="mt-2">
-              Die Einbindung von YouTube-Videos erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGGO (berechtigtes Interesse an einer ansprechenden Darstellung unserer Inhalte). Weitere Informationen findest du in der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" className="text-primary hover:underline">Datenschutzerklärung von Google/YouTube</a>.
+              Die Einbindung von YouTube-Videos erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer ansprechenden Darstellung unserer Inhalte). Weitere Informationen findest du in der <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" className="text-primary hover:underline">Datenschutzerklärung von Google/YouTube</a>.
             </p>
           </section>
 

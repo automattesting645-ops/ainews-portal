@@ -90,3 +90,19 @@ export interface GuideEntry {
   coverImage: string | null
   videoId?: string | null
 }
+
+export interface LocalAIModel {
+  name: string
+  provider: string
+  size: string
+  strength: string
+  useCases: string
+  topPick: boolean
+  source: string
+}
+
+export interface AINewsUpdate {
+  date: string
+  title: string
+  summary: string
+}
