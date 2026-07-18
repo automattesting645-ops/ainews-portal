@@ -91,7 +91,7 @@ export default function VideosPage() {
           </p>
           <div className="flex items-center justify-center gap-8 flex-wrap mb-8">
             <div className="text-center">
-              <div className="text-2xl font-bold metallic-text">17</div>
+              <div className="text-2xl font-bold metallic-text">21</div>
               <div className="text-xs text-muted-foreground">Abonnenten</div>
             </div>
             <div className="w-px h-10 bg-border/50" />
@@ -101,7 +101,7 @@ export default function VideosPage() {
             </div>
             <div className="w-px h-10 bg-border/50" />
             <div className="text-center">
-              <div className="text-2xl font-bold metallic-text">2.354</div>
+              <div className="text-2xl font-bold metallic-text">2.684</div>
               <div className="text-xs text-muted-foreground">Aufrufe</div>
             </div>
           </div>
